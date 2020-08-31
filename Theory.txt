@@ -1,0 +1,381 @@
+identifiers
+    identifier is a name used to identify varibale, function, class,module or any other object. The identifiers starts with letter (A-Z) or (a-z) or an _ (underscore) and digits.
+    Python doesn't allow any punctuations except for underscore's.
+    Python is case sensitive.
+    Class names will be starting with upper case letters. rest all will be starting with lower case letters.
+
+
+Reserved words - These cannot be used as a constant or a variable.
+    and
+    assert
+    break
+    *class
+    continue
+    *def
+    del
+    *elif
+    *else
+    *except
+    exec
+    *finally
+    *for
+    from
+    global
+    *if
+    import
+    in
+    is
+    lambda
+    not
+    or
+    pass
+    print
+    raise
+    return
+    *try
+    *while
+    *with
+    yield
+* all of these having blocks of expressions (indentation) ending with colon(:)
+
+Comments:
+    single line comments: are visible to programmers which are invisible to inerpreters.
+        single line comments begins with #
+    Multi Line comments: begins with ''' and ends with '''. If we start the line with ''' and then we write multiple lines of data and ended with ''', we will get the output in single line.
+
+python -h (we will get the important options and arguments (and corresponding environment variables)) which are belo list:
+    -c cmd prgm passed in as string
+    -d opens python in debug mode
+    Above two (-c & -d) both are used in python testing and python expertise.
+    -v Verbose means lot of things happened in background.
+    -V goes for version
+python -v - while downloading python we click the checkbox add python to path, this is installing interpreter. interpreter reads and executes the code by reading .py files.
+Translator sits between code & Operating System in byte code.
+Translator comes with 2 types 1. compilers & 2. Interpreters.
+While importing program, pycache files will be created.
+    (terminal window>>> python (Enter) >> we can see pycache->prgm name.cpython->38pyc)
+    pycache files are nothing but interpreted form of our code. It will not interpret again and again.
+    While generating output we should delete pycache files. If we do any changes to the code after running the program those changes will not get implemented while runing the code again, because pycache files are interpreted when we run the program and those will not change when we do the changes after running.
+
+    Pythonpath: PYTHONPATH is an environment variable which you can set to add additional directories where python will look for modules and packages. Throught the program it is visible.
+    (controlpanel>>system>>advanced system>>environment variables>>path(to see the folder where python located))
+    (python
+    python os
+    import sys
+    write below line in terminal window
+    for i in sys.path:
+        print(i)(enter)(enter))
+        we will get all the paths
+
+    Pythonstartup:PYTHONSTARTUP is an environment variable you will define specifying the location of the path to a python file.
+    Pythoncaseok: it is used only in windows to instruct python to find the first case sensitive match in on import statement. set this variable to any value activated.
+
+    PythonHome: alernative module search path. it makes environment variables to switch the module easily.
+    PYTHONHOME is an alternative module/library search path. PYTHONPATH is to tell the Python interpreter where to locate the module files imported into a program. PYTHONSTARTUP is the path of an initialization file containing Python source code.
+
+* Assigning values to variables:
+    a=5
+a is variable, 5 is value, = is assigning
+
+example: a=125
+Interpreter reads from right to left. reads 125 and understands that as number and makes a box of size integer and put that 125 in the box and gives name as a. This is single assignment.
+
+id(a) - we get address/memory location of a with value 125. Memory is in hexadecimal format.
+hed(id(a))
+
+a,b,c=5,6,7 - it is tuple embacking - multiple assignment of data.
+
+DataTypes:
+    type(7)
+    type(7.0)
+    type("7")
+    type("7+8j")
+    type([7+8j])
+    type(([7+8j]))
+    type({([7+8j])})
+    type({1})
+
+Operators: are of 7types
+    1. Arithmetic
+    2. Comparision/relational
+    3. assignment
+    4. Logical
+    5. Bitwise
+    6. Membership
+    7. Identity
+
+1.Arithmetic: 
+    =
+    -
+    *
+    / (division)
+    % (modulus)
+    // (floor divison)
+    ** (Exponential)
+        / (division) will gives floating point value also called float divison.
+        % (modulus) gives us remainder
+        // (div) gives Quotient
+        ** - to the power of
+
+2. Comparision: We are comparing something which gives us True/False.
+    1. == ->Equality Operators
+    2. != -> not equals to
+    3. > -> Greaterthan
+    4. < -> Lessthan
+    5. >= -> Greaterthan or Equalsto
+    6. <= -> Lessthan or Equalsto
+
+3. Assignment:
+    1. = ->Equalsto
+        +=
+        -=
+        *=
+        /=
+        %=
+        //=
+        **=
+
+4. Logical:
+    and
+    or
+    not
+
+5. Bitwise:
+    & (binary and)
+    | (binary or)
+    ^ (binary xor)
+    ~ (one's Complement)
+    << (binary leftshift)
+    >> (binary rightshift)
+
+6. Membership:
+    in
+    not in
+
+7. Identity:
+    is
+    is not
+
+Operator Precedence: Which operator has high Precedence
+    1. ()
+    2. **
+    3. ~+- (unary)
+    4. *,/,%,//
+    5. +,- (binary)
+    6. >>, <<
+    7. &
+    8. ^,|
+    9. <=, >=, ==, !=
+    10. Assignment Operators
+    11. is, is not
+    12. in, not in
+
+operation:
+    decision making
+    looping inside
+
+29/8/2020:
+
+All the applications/Softwares/Code basically have 2 things:
+    1. Variable-Value sets
+    2. Functions
+Values are primary Data Type.
+Variables are Memory Location of values stored.
+
+Operation:
+    1.Making decision
+    2. Looping inside
+
+Decision Making: Python assumes any
+     Non-Zero values as True
+     not Null values are also True and
+     If the value is 0 or Null that determines to False.
+
+Single statement, multiple statements
+a single if can work. elif and else would not work without if
+
+if expression is True:
+    do this
+elif expression is True:
+    do this
+elif expression is True:
+    do this
+elif expression is True:
+    do this
+elif expression is True:
+    do this
+elif expression is True:
+    do this
+else: (if nothing is True)
+    do this
+
+eg:
+num=float(input("Enter a value:"))
+if num<35.5:
+    return "Its less than 35.5"
+elif num<=99.0:
+    print("It is greater than 35.5 and less than 99.0")
+else:
+    return "Its greater than 100"
+
+Unicode is the normal format of strings in Python, if you need to convert it into formatted you need to add an f before the string.
+
+eg: print("{num} less than 35.5")
+        O/p will be {num} less than 35.5
+    print(f"{num} less than 35.5")
+        O/p will be 5 less than 35.5
+
+"f" is used convert string to a number.
+"r" is raw string.
+
+Loops:
+    allows us to execute a statement or a group of statement for 
+        a fixed number of times, 
+        or for a fixed set of values 
+        or until a particular condition is met.
+
+    while
+        or until a particular condition is met.
+    
+    for
+        a fixed number of times-> allows us to change the contents inside the box
+            for number in range(fixed_number_of_times):
+                # do something
+        or for a fixed set of values
+            for value in set_of_values:
+                # do something
+
+type(range) - class
+range: only returns integer values not float or complex.
+range(start, stop, (direction)step), range only returns integer values
+        0               +/-       1
+
++ direction increases value from from left to right.
+- direction increases value from right to left.
+
+range(5) = 0 position till 5th position -> 0 upto 4 when iterated   
+
+range(4, 10) => 4,5,6,7,8,9 when looped
+for i in range(4,10):
+    print(i)
+
+O/p: 4,5,6,7,8,9
+
+for i in range(5):
+    print(i,i*i)
+
+O/p: 0 0
+     1 1
+     2 4
+     3 9
+     4 16
+     
+for i in "Kalyani":
+    print(i*2)
+
+O/p: kk
+     aa
+     ll
+     yy
+     aa
+     nn
+     ii
+
+a=["1", 2,3,4,5]
+for i in a:
+    print(i)
+
+O/p: 1
+     2
+     3
+     4
+     5
+
+range(4,10,2)
+
+O/p: 4, 6, 8
+
+range(4,10,-1)
+
+O/p: No output
+
+range(10,5,-1)
+
+O/p: 10
+     9
+     8
+     7
+     6
+     
+range(10,5,-2)
+O/p:10
+    8
+    6
+
+for loop allows us to change the contents inside the box.
+eg: list=[2,3,4,5]
+    for i in range(list):
+        print(i*2)
+
+    O/p: 4,6,8,10
+    
+eg: l=[2,3,4,6,7]
+    for i in range(len(l)):
+        l[i]=l[i]**2
+        print(l[i])
+    O/p: [4,6,16,36,49]
+    Index value in output:  l[0]=4
+                            l[1]=6
+                            l[2]=16
+
+eg: l=[2,3,4,6,7]
+    for i in range(len(l)-1,-1,-1):
+        print(i,l[i])
+
+    O/p: 4 49
+         3 36
+         2 16
+         1 9
+         0 4
+
+loop control statements: are of 3 types
+    1.break -> terminated the loop statement and transfers execution to the statement immediately following the loop
+    2.continue -> causes the loop to skip the remainder of its body and work on the next iteration
+    3.pass - > do nothing
+
+for i in range(0,256)    :
+    print(i, chr(i))
+O/p:
+    48 to 57 - 0 to 9 (numbers)
+    65 to 90 - A to Z (Capital Alphabets)
+    97 to 122 - a to z (Small Alphabets)
+
+chr(65) gives Ascii value - A
+ord(A) gives numeral value - 65
+
+     eg: num =int(input("Enter value:"))
+         print("""This loop will continue till the time you enter 0 or False or Null""")
+         while num:
+         inp=input(">>>")
+            if ord(inp) in range(48,58):
+                print("f{inp} is a number")
+            elif ord(inp) in range(65,91):
+                print("f{inp} is caital letter")
+            elif ord(inp) in range(97,123):
+                print("f{inp} is small letter")
+            else:
+                print("f{inp} is a symbol")
+        if inp is false:
+            break
+        elif inp<0 or inp>255:
+            print("input is out of range")
+            continue
+        else:
+
+def right_angled_triangle(n,pat)
+    for i in range(1,n+1):
+        print(pat*i)
+    for i in range(n,0,-1):
+        print(pat*i)
+right_angled_triangle(5,"*")
+
