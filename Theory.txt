@@ -379,3 +379,327 @@ def right_angled_triangle(n,pat)
         print(pat*i)
 right_angled_triangle(5,"*")
 
+If there are any changes in program we need to write these below 3 lines in cmd, so that changes will be applicable in Github repository as well.
+git add .
+git commit -m "your message"
+git push -u origin master
+
+
+31/08/2020:
+
+Python Home: The location of Python at runtime is defined by environment variabel Python Home.
+This location is different than the location we are using in current program.
+
+import os
+os.environment - gives all environment variables
+
+for i in os.environ:
+    print(i)
+
+will get list of v
+
+for i in os.environ.items():
+    print(i, i.value)
+
+for k, v in os.environ.items():
+    print(f"{k} - {v}")
+
+user specific environ.variables
+envt variable as dictionary {key - value}
+
+set Pythoncaseok = x
+
+import os
+
+Python application looks for particular files execute when python application startup.
+
+import math
+dir(math) - will get list of math operations
+
+math.floor(15/4)
+O/p: 3
+
+15/4 gives float value, but math.floor will give integral part of the number
+math.ceil(15/4)
+O/p: 4 
+
+15/4 - gives 3.75, math.ceil gives next integer i.e, 4
+
+Anything before decimal is Ceil value and after decimal value is floor value.
+
+math.sqrt(16)
+o/p: 4
+
+from math import sqrt - to use sqrt directly - sqrt(45)
+
+01/09/2020
+
+Data Types: How Python stores a data.
+    The Raw materials are primarily data types. These are exisiting in each &every program which are crucial like
+    1.Numbers - Int, Float, Complex
+    2.Strings - Single Character, Stream of characters/Collection of characters
+    3.Booleans - True/False
+    4.Nonetype - None
+
+    single character - string of len(1)
+    stream of characters - 4 ways
+        1. Single line - ' ', " "
+        2. Multilined - """ """, ''' '''
+
+Escape Character: spaces - \s
+                  tabs - \t
+                  \n - new line
+                  \\ - backslash
+
+* Data Structures are in-built in Python/Secondary Data Types.
+    Structures made up of primary data type with certain properties (Data Structure is done by programmers)
+    1. list
+    2. Tuples
+    3. Sets
+    4. Dictionaries
+
+List:   [] Lists are datatypes which are indexed and contain any type of data and are mutable (changeable)
+        List are superset of array.
+    
+    Indexed means - all values in the list can find by place value.
+    Eg: l = [1, 2.5, "Kalyani", (2,3,4), {2:3}, {2,3}]
+        
+        l[0] = 1
+        l[1] = 2.5
+        l[3] = (2,3,4)
+
+        id(l) = will get some address
+
+        l.append("Sriani")
+        O/p: l = [1,2.5, "Kalyani", (2,3,4), {2:3}, {2,3}, "Sriani"]
+
+        id(l) is same as above even after adding new values to existing list.
+
+Tuples: (,) Tuples are Indexed and Immutable (not changeable)
+    
+    Eg: l = [1, 2.5, "Kalyani", (2,3,4), {2:3}, {2,3}, "Sriani"] 
+        t = tup(l)
+        O/p: t = [1, 2.5, "Kalyani", (2,3,4), {2:3}, {2,3}, "Sriani"] 
+
+        dir(l), dir(t) - we get list of functions which we can do.
+
+        id(t) = some address will get
+
+        t = t - [l] - (deleting list from tuple is not possible)
+        O/p: unsupported operand
+
+        t = t - (1,) - (deleting tuples from tuple also not possible)
+        O/p: not supported
+
+        We cannot change tuple by adding/removing values.
+
+    Eg 2: l1 = [2,3]
+          t1 = (2,3)
+
+          id(l1) = some abc address
+          id(t1) = some xyz address
+
+          l1.append(4)
+          O/p: l1 = [2,3,4]
+
+          t1.append(4)
+          O/p: No attribute append in tuple
+
+          id(l1) = same address as above
+
+          t+l1 = (1, 2.5, "Kalyani", (2,3), {2:3}, {2,3}, "Sriani", [2,3,])
+
+          2 items/variables are same when their memory locations are same.
+
+          t.index(1) = 0 - gives index value of 1
+          t.count(1) = 1 - count gives number of 1's in the above tuple
+
+        def abc():
+            return 3,4,5
+        a = abc
+        O/p: 3,4,5
+
+        type(abc())
+        <class 'tuple'>
+
+        a,b,c = abc() - this is tuple embacking
+        O/p: a
+             3
+             b
+             4
+             c
+             5
+
+Sets: {} Non-Indexed, mutable
+    Eg: s = {2,3,4,5,5}
+        O/p: {2,3,4,5} - Set gives unique values, removes duplicate values.
+
+        let's add values to set
+        s = {2,3,4,5}
+        id(s) = some xyz address
+        s.add{(6,7)}
+        O/p: {2,3,4,5,(6,7)}
+
+        l = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+        list(set(l))
+        O/p: [1,2,3,4]
+        
+    How to get values from set without indexing?    Using Membership Operators.
+    Eg: 2 in s
+    O/p: True - value 2 is present in set s.
+        
+        {1,2} == {2,1}
+        O/P: True - set will check whether value is there or not.
+
+        (list) [1,2] == [2,1]
+        O/p: False - bcoz  index value of 1 is 0 in left side input
+                        index value of 1 is 1 in right side input. so both are not equal.
+        
+Dictionaries: It contains Key - Value pairs, Non-Indexed, Mutable.
+              All the Values are linked to Keys.
+              All the Keys are only Immutable data types.
+
+    Eg: d = {1:2, 3:4, "Kalyani:Sriani", None:5, True:False, (1,):"xyz" }
+
+        O/p: d[0] = Error - because indexing values cannot be possible in dictionaries.
+
+            d[1] = 2 - 1 is Key in above list(1:2)
+            d[None] = 5
+            d[True] = False
+
+            If we add any pair to dictionary, it will append to the last place.
+
+    Eg: d = {1:True, 3:4, None:5, (1,):"xyz"}
+        for i in d:
+            print(i, d[i])
+
+        O/p: 1 True
+             3 4
+             None 5
+             (1,) xyz
+    dir(d.keys())
+    d.values
+    type(d.values)
+    d.keys
+    type(d.keys)
+    d.items - items in list of tuple
+    type(d.items)
+
+Tuples & Strings are Immutable.
+String s = xyz
+        s = s+1
+        print(s) - to check immutable for string
+    
+DataTypes which are Iterable are Int, Strings, Booleans
+
+s = "i am a string"
+s.capitalize()
+O/p: "I am a string"
+
+casefold() - return the version of Python
+
+dir(s) - list of functions
+
+help(str) - will give the usage of functions which are in dir.
+
+s.count(a)
+O/P: 2 - two a's present in above string.
+
+len(s)
+O/p: 13 - including spaces
+
+s.count(" ")
+o/p: 3 - number of spaces
+
+*encode - will use in compiler level.
+
+s.endswith("s")
+O/p: False - above string "I am a string" ends with letter 'g' not with 's'
+
+s.endswith('s')
+O/p: True
+
+s.endswith(s)
+O/P: True - if we write s without quotes, then it will check with complete string (i.e: "I am a string"). The statement ends with word "string" having 's'
+
+s.endswith('string')
+O/p: True
+
+s.find(" ")
+O/p: 1 - first space index value
+
+s.find("g")
+O/p: 12 - index value of 'g'
+
+"{} is good.format("abc")
+o/p: "abc" is good.
+
+a= "abc"
+f"{a} is good"
+o/p: 'abc is good'
+
+In dir(s) - isalnum to isupper functions give True/False.
+
+s[0].islower
+O/p: True
+
+" ".isspace()
+O/p: True
+
+"abcdefs".isspace()
+O/p: False
+--isspace will check if the string is empty, then it gives True. if there is a space in between the string it gives false.
+
+to find the sspace in string we have to write it as
+"   abcdef"[1].isspace()
+O/p; True
+bcoz, starting space after quotes has 2 spaces with index values 0,1. so when we are giving 1 in [], then it is checking for index position of [1] and if there is space then it gives True. otherweise it will get False.
+
+"  abcdef"[2].isspace()
+o/p: False
+
+s.split()
+O/p: ['i', 'am', 'a', 'string'] - split converts a string into list.
+
+s.split("a")
+O/p: ['i ', 'm ', 'string']
+
+s.split(" ",1) - number of time split has to be done.
+O/p: ['i', 'am a string']
+
+s.split(" ", 2)
+O/p: ['i', 'am', 'a string']
+
+s.split(" ", 0)
+O/p: ["i am a string']
+
+s.split()
+O/p: ['i', 'am', 'a', 'string']
+
+" ".join(s.split())
+o/p:"i am a string"
+
+"---".join(s.split())
+O/p; 'i---am---a---string'
+
+"---".join(s.split(" ",1))
+O/p: i---amastring
+
+s.rsplit()
+['i', 'am', 'a', 'string']
+
+s.lstrip()
+'i am a string'
+
+s.upper()
+'I AM A STRING'
+
+s.lower()
+'i am a string'
+
+s.title()
+'I Am A String'
+
+s = "I Am A String"
+s.swapcase()
+'i aM a sTRING'
